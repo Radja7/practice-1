@@ -1,0 +1,6 @@
+.idea/
+.git/
+node_modules/
+.eslintrc
+.gitattributes
+package-lock.json
