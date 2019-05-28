@@ -8,10 +8,11 @@
   var setupClose = document.querySelector('.setup-close');
   // Finding template with data
   var similarListElement = document.querySelector('.setup-similar-list');
-  var wizards = window.newWizard.create(window.wizardsData.numberOfPersone);
 
-  similarListElement.appendChild(window.newWizard.getFragment(wizards));
-  document.querySelector('.setup').classList.remove('hidden');
+  window.wizards.request();
+  //var wizards = window.newWizard.create(window.wizardsData.numberOfPersone);
+  similarListElement.appendChild(window.newWizard.getFragment(window.wizards.request));
+
   document.querySelector('.setup-similar').classList.remove('hidden');
 
   // Event listeners
@@ -108,6 +109,8 @@
     wizardFireball.addEventListener('click', wizardFireballClickHandler);
     userNameInput.addEventListener('invalid', inputValidityHandler);
     userNameInput.addEventListener('input', inputLengthValidityHandler);
+
+    console.log('OPENNNNNNNNNNNN');
   }
 
   function closePopup(){
