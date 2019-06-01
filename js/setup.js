@@ -9,6 +9,12 @@
   // Finding template with data
   var similarListElement = document.querySelector('.setup-similar-list');
 
+  var form = document.querySelector('.setup-wizard-form');
+
+  window.setup = {
+    successHandler: successHandler,
+  };
+
   window.wizards.request();
   //var wizards = window.newWizard.create(window.wizardsData.numberOfPersone);
   similarListElement.appendChild(window.newWizard.getFragment(window.wizards.request));
@@ -45,8 +51,6 @@
     }
   });
 
-
-  // functions
   function wizardFireballClickHandler (evt) {
     var wizardFireballColor = window.utilities.getRandomItemOfArray(window.wizardsData.fireballColors);
     wizardFireball.style.backgroundColor = wizardFireballColor;
@@ -121,6 +125,12 @@
     wizardFireball.removeEventListener('click', wizardFireballClickHandler);
     userNameInput.removeEventListener('invalid', inputValidityHandler);
     userNameInput.removeEventListener('input', inputLengthValidityHandler);
+  }
+
+  // functions
+  function successHandler (evt) {
+    closePopup();
+    console.log('Отправил');
   }
 
 })();

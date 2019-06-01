@@ -40,7 +40,7 @@
 
   function save (data, onLoad, onError) {
 
-    var xhr = XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
     xhr.respanseType = 'json';
 
     xhr.addEventListener('load', function () {

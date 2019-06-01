@@ -32,7 +32,7 @@
   }
 
   function request() {
-    window.backend.load(loadHandler, err);
+    window.backend.load(loadHandler, window.utilities.errorHandler);
   }
 
 

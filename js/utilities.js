@@ -36,6 +36,9 @@
       return array[window.utilities.getRandomInteger(0, array.length)];
     },
 
+    errorHandler: function (errText) {
+      console.log('Ошибка: ' + errText);
+    }
 
   };
 })();
