@@ -19,6 +19,7 @@
   //var wizards = window.newWizard.create(window.wizardsData.numberOfPersone);
   similarListElement.appendChild(window.newWizard.getFragment(window.wizards.request));
 
+
   document.querySelector('.setup-similar').classList.remove('hidden');
 
   // Event listeners

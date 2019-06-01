@@ -870,3 +870,13 @@ input[type=radio]:checked + .review-mark-label {
   left: 0;
   top: 0;
 }
+
+.error{
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #fff;
+  color: red;
+  background-color: #fff;
+}

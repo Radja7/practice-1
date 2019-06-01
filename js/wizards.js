@@ -2,6 +2,9 @@
 
 (function () {
 
+  var similarList = document.querySelector('.setup-similar-list');
+  var errorMessage = document.querySelector('.error-message');
+
   window.wizards = {
     numberOfPersone: 4, // количество волшебников в списке
     request: request,
@@ -27,14 +30,22 @@
     //window.filter.updateWizards(window.wizards.loadList);
   }
 
-  function err () {
-    console.log('Error');
+  function errorHandler (errText) {
+    console.log('Ошибка загрузки персонажей: ' + errText);
+
+    if(similarList.children.length === 0) {
+
+      var newTag = document.createElement('p');
+      newTag.classList.add('error');
+      newTag.innerHTML = 'Произошла ошибка загрузки данных';
+      similarList.appendChild(newTag);
+
+    }
   }
 
   function request() {
-    window.backend.load(loadHandler, window.utilities.errorHandler);
+    window.backend.load(loadHandler, errorHandler);
   }
-
 
 
 })();

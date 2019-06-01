@@ -7,7 +7,7 @@
     save: save
   };
 
-  var URL = 'https://js.dump.academy/code-and-magick';
+  var URL = 'https://js.dump.academy/code-and-magick2';
   var STATUS_OK = 200;
   var TIME_OUT = 10000;
 
@@ -20,7 +20,7 @@
       if(xhr.status === STATUS_OK) {
         onLoad(xhr.response);
       } else {
-        onError('Статус ответа ' + xhr.status + ' ' + xhr.statusText);
+        onError(xhr.status);
       }
 
     });
